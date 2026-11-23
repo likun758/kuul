@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">kuul architecture (single process · four layers)</text>
+
+  <!-- layer labels -->
+  <g font-size="12" font-weight="700" fill="#6b6b6b">
+    <text x="30" y="96">Access</text>
+    <text x="30" y="190">Engine</text>
+    <text x="30" y="300">Capability</text>
+    <text x="30" y="440">Foundation</text>
+  </g>
+
+  <rect x="100" y="56" width="680" height="490" rx="16" fill="#faf9ff" stroke="#6b5fd3" stroke-width="2"/>
+
+  <!-- access -->
+  <rect x="120" y="70" width="310" height="54" rx="10" fill="#ecebff" stroke="#9b92e0"/>
+  <text x="275" y="93" text-anchor="middle" font-size="14" font-weight="600" fill="#3f348f">Channel</text>
+  <text x="275" y="113" text-anchor="middle" font-size="12" fill="#4f45a6">Picocli · kuul chat / gateway</text>
+  <rect x="450" y="70" width="310" height="54" rx="10" fill="#ecebff" stroke="#9b92e0"/>
+  <text x="605" y="93" text-anchor="middle" font-size="14" font-weight="600" fill="#3f348f">Web Service</text>
+  <text x="605" y="113" text-anchor="middle" font-size="12" fill="#4f45a6">Spring MVC · virtual threads · ApiKeyFilter</text>
+
+  <line x1="275" y1="126" x2="400" y2="150" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+  <line x1="605" y1="126" x2="480" y2="150" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <!-- engine -->
+  <rect x="120" y="152" width="640" height="70" rx="10" fill="#ddd9ff" stroke="#6b5fd3"/>
+  <text x="440" y="174" text-anchor="middle" font-size="13" font-weight="600" fill="#2f2680">AgentService.process(session, message)</text>
+  <g font-size="13" font-weight="600" fill="#2f2680" text-anchor="middle">
+    <rect x="140" y="184" width="190" height="30" rx="8" fill="#ffffff" stroke="#9b92e0"/><text x="235" y="204">ReActLoop</text>
+    <rect x="345" y="184" width="190" height="30" rx="8" fill="#ffffff" stroke="#9b92e0"/><text x="440" y="204">PromptBuilder</text>
+    <rect x="550" y="184" width="190" height="30" rx="8" fill="#ffffff" stroke="#9b92e0"/><text x="645" y="204">ToolExecutor</text>
+  </g>
+
+  <!-- capability -->
+  <g font-size="11.5">
+    <rect x="120" y="236" width="150" height="130" rx="10" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="195" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#3f348f">ProviderService</text>
+    <text x="195" y="284" text-anchor="middle" fill="#555">name → ChatModel</text>
+    <text x="195" y="304" text-anchor="middle" fill="#555">explicit mapping</text>
+    <text x="195" y="324" text-anchor="middle" fill="#555">Spring AI 2.x</text>
+    <text x="195" y="344" text-anchor="middle" fill="#555">records llm_calls</text>
+
+    <rect x="283" y="236" width="150" height="130" rx="10" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="358" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#3f348f">MemoryService</text>
+    <text x="358" y="284" text-anchor="middle" fill="#555">one facade, 3 layers</text>
+    <text x="358" y="304" text-anchor="middle" fill="#555">session → SessionStore</text>
+    <text x="358" y="324" text-anchor="middle" fill="#555">long-term → MEMORY.md</text>
+    <text x="358" y="344" text-anchor="middle" fill="#555">save / recall tools</text>
+
+    <rect x="446" y="236" width="150" height="130" rx="10" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="521" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#3f348f">ToolRegistry</text>
+    <text x="521" y="284" text-anchor="middle" fill="#555">KuulTool abstraction</text>
+    <text x="521" y="304" text-anchor="middle" fill="#555">built-in · @Tool Beans</text>
+    <text x="521" y="324" text-anchor="middle" fill="#555">McpClientService</text>
+    <text x="521" y="344" text-anchor="middle" fill="#555">SandboxChecker</text>
+
+    <rect x="609" y="236" width="151" height="130" rx="10" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="684" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#8a5a00">Governance</text>
+    <text x="684" y="284" text-anchor="middle" fill="#8a5a00">PolicyGuard</text>
+    <text x="684" y="304" text-anchor="middle" fill="#8a5a00">AuditService</text>
+    <text x="684" y="324" text-anchor="middle" fill="#8a5a00">Redactor</text>
+    <text x="684" y="344" text-anchor="middle" fill="#8a5a00">hooks: tenant / RBAC</text>
+  </g>
+
+  <!-- foundation -->
+  <rect x="120" y="380" width="310" height="150" rx="10" fill="#f6f5f1" stroke="#cfcdc6"/>
+  <text x="275" y="404" text-anchor="middle" font-size="14" font-weight="600" fill="#4a4a4a">Config &amp; context</text>
+  <g font-size="12" fill="#555" text-anchor="middle">
+    <text x="275" y="430">ProfileRegistry (YAML + validation)</text>
+    <text x="275" y="452">ContextLoader (Bootstrap + SKILL.md)</text>
+    <text x="275" y="474">ConfigLoader (${ENV} + validation)</text>
+    <text x="275" y="496">File system .kuul/</text>
+  </g>
+  <rect x="450" y="380" width="310" height="150" rx="10" fill="#f6f5f1" stroke="#cfcdc6"/>
+  <text x="605" y="404" text-anchor="middle" font-size="14" font-weight="600" fill="#4a4a4a">Persistence</text>
+  <g font-size="12" fill="#555" text-anchor="middle">
+    <text x="605" y="430">SQLite (WAL) + Spring JDBC + Flyway</text>
+    <text x="605" y="452">sessions · tool_invocations · llm_calls</text>
+    <text x="605" y="474">Audit JSONL: logs/audit/</text>
+    <text x="605" y="496">Long-term memory: memory/MEMORY.md</text>
+  </g>
+
+  <!-- external -->
+  <rect x="820" y="236" width="150" height="56" rx="10" fill="#ffffff" stroke="#cfcdc6"/>
+  <text x="895" y="260" text-anchor="middle" font-size="13" fill="#4a4a4a">LLM API</text>
+  <text x="895" y="280" text-anchor="middle" font-size="12" fill="#777">Cloud / Ollama / vLLM</text>
+  <rect x="820" y="310" width="150" height="56" rx="10" fill="#ffffff" stroke="#cfcdc6"/>
+  <text x="895" y="334" text-anchor="middle" font-size="13" fill="#4a4a4a">MCP Server</text>
+  <text x="895" y="354" text-anchor="middle" font-size="11.5" fill="#777">stdio / Streamable HTTP</text>
+  <line x1="762" y1="264" x2="818" y2="264" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+  <line x1="762" y1="338" x2="818" y2="338" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+  <text x="895" y="400" text-anchor="middle" font-size="12" fill="#888">Outside the app boundary</text>
+  <text x="895" y="418" text-anchor="middle" font-size="12" fill="#888">kuul is not tied to any vendor</text>
+
+  <text x="500" y="578" text-anchor="middle" font-size="12" fill="#888">Provider, Memory and Tool feed the engine; the engine is exposed via CLI and Web Service; Governance cuts across every model and tool call</text>
+</svg>

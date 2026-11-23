@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">Three ways to add plugin tools: prefer the left when it works</text>
+
+  <line x1="80" y1="66" x2="920" y2="66" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="80" y="58" font-size="12" fill="#888">Low barrier · reuse the community</text>
+  <text x="920" y="58" text-anchor="end" font-size="12" fill="#888">Deeper integration · more engineering</text>
+
+  <g font-size="12">
+    <rect x="80" y="84" width="260" height="250" rx="12" fill="#ddd9ff" stroke="#6b5fd3" stroke-width="2"/>
+    <text x="210" y="114" text-anchor="middle" font-size="16" font-weight="700" fill="#2f2680">No code (recommended)</text>
+    <text x="210" y="138" text-anchor="middle" font-size="13" fill="#3f348f">SKILL.md + existing MCP Servers</text>
+    <text x="96" y="172" fill="#3f348f">· Write one markdown file of intent</text>
+    <text x="96" y="196" fill="#3f348f">· Reuse community MCP Servers</text>
+    <text x="96" y="216" fill="#3f348f">  for GitHub, Slack, Notion, …</text>
+    <text x="96" y="240" fill="#3f348f">· The LLM picks and combines tools</text>
+    <text x="96" y="274" fill="#555">e.g. daily PR review digest to Slack</text>
+    <text x="96" y="296" fill="#555">→ 1 SKILL.md + 2 MCP Servers</text>
+    <text x="96" y="318" fill="#555">→ 0 lines of code</text>
+
+    <rect x="370" y="84" width="260" height="250" rx="12" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="500" y="114" text-anchor="middle" font-size="16" font-weight="700" fill="#3f348f">Light code</text>
+    <text x="500" y="138" text-anchor="middle" font-size="13" fill="#3f348f">Write your own MCP Server</text>
+    <text x="386" y="172" fill="#3f348f">· Any language: Python / Go / Shell</text>
+    <text x="386" y="196" fill="#3f348f">· Standard MCP protocol (JSON-RPC)</text>
+    <text x="386" y="220" fill="#3f348f">· kuul connects as an MCP Client</text>
+    <text x="386" y="244" fill="#3f348f">· stdio or Streamable HTTP</text>
+    <text x="386" y="284" fill="#555">For: in-house ERP / CRM / CMDB</text>
+    <text x="386" y="306" fill="#555">with no community server available</text>
+
+    <rect x="660" y="84" width="260" height="250" rx="12" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="790" y="114" text-anchor="middle" font-size="16" font-weight="700" fill="#3f348f">Full code</text>
+    <text x="790" y="138" text-anchor="middle" font-size="13" fill="#3f348f">@Tool-annotated Spring Beans</text>
+    <text x="676" y="172" fill="#3f348f">· Scanned and registered at startup</text>
+    <text x="676" y="196" fill="#3f348f">· Call internal Java services directly</text>
+    <text x="676" y="220" fill="#3f348f">· Reuse Beans and Spring Security</text>
+    <text x="676" y="244" fill="#3f348f">· Best performance and integration</text>
+    <text x="676" y="284" fill="#555">For: deep integration in Java stacks,</text>
+    <text x="676" y="306" fill="#555">where kuul beats Node / Python</text>
+  </g>
+
+  <rect x="80" y="350" width="840" height="36" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+  <text x="500" y="373" text-anchor="middle" font-size="12" fill="#8a5a00">Tools from all three land in one tool pool and all go through the Profile tool policy, allowlist checks and audit records</text>
+</svg>

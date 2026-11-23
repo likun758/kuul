@@ -16,3 +16,8 @@ target/
 # kuul runtime workspace (contains data, logs and secrets)
 .kuul/
 *.db
+
+# Website (site/)
+site/node_modules/
+site/.vitepress/dist/
+site/.vitepress/cache/

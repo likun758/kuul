@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <text x="500" y="38" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">kuul roadmap: from single node to distributed</text>
+
+  <!-- layer bands -->
+  <text x="40" y="84" font-size="13" fill="#8a8a8a">Distributing the platform itself (operations)</text>
+  <line x1="40" y1="92" x2="640" y2="92" stroke="#d9d6cf"/>
+  <text x="680" y="84" font-size="13" fill="#8a8a8a">Distributing across Agents (collaboration)</text>
+  <line x1="680" y1="92" x2="960" y2="92" stroke="#d9d6cf"/>
+
+  <!-- stage 1 -->
+  <rect x="40" y="110" width="270" height="200" rx="14" fill="#e3f3ec" stroke="#3f8f6c" stroke-width="2"/>
+  <text x="175" y="144" text-anchor="middle" font-size="17" font-weight="700" fill="#1f5e45">Now · single-node, private</text>
+  <g font-size="13" fill="#245a44">
+    <text x="60" y="180">· One instance per team or use case</text>
+    <text x="60" y="206">· Single JAR / container, embedded DB</text>
+    <text x="60" y="232">· Built-in governance → RBAC / SSO</text>
+    <text x="60" y="258">· Run it, harden it, pass security review</text>
+  </g>
+  <text x="175" y="294" text-anchor="middle" font-size="13" font-weight="600" fill="#1f5e45">All current focus</text>
+
+  <!-- stage 2 -->
+  <rect x="370" y="110" width="270" height="200" rx="14" fill="#f1f0ec" stroke="#9c9890"/>
+  <text x="505" y="144" text-anchor="middle" font-size="17" font-weight="700" fill="#3a3a3a">Mid-term · distributed core</text>
+  <g font-size="13" fill="#4f4f4f">
+    <text x="390" y="180">· Stateless instances, external state</text>
+    <text x="390" y="206">· Exactly-once messages, task leases</text>
+    <text x="390" y="232">· Multi-tenant isolation in storage</text>
+    <text x="390" y="258">· K8s replicas, HA, horizontal scaling</text>
+  </g>
+  <text x="505" y="294" text-anchor="middle" font-size="13" font-weight="600" fill="#5e5e5e">Reserved in the architecture</text>
+
+  <!-- stage 3 -->
+  <rect x="690" y="110" width="270" height="200" rx="14" fill="#f1f0ec" stroke="#9c9890" stroke-dasharray="6 4"/>
+  <text x="825" y="144" text-anchor="middle" font-size="17" font-weight="700" fill="#3a3a3a">Long-term · Agent collaboration</text>
+  <g font-size="13" fill="#4f4f4f">
+    <text x="710" y="180">· Across nodes, teams, organizations</text>
+    <text x="710" y="206">· Agents discover and delegate</text>
+    <text x="710" y="232">· Identity and audit context travel along</text>
+    <text x="710" y="258">· Built on protocols such as A2A</text>
+  </g>
+  <text x="825" y="294" text-anchor="middle" font-size="13" font-weight="600" fill="#5e5e5e">Vision</text>
+
+  <line x1="312" y1="210" x2="366" y2="210" stroke="#6b6b6b" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="642" y1="210" x2="686" y2="210" stroke="#6b6b6b" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- bottom notes -->
+  <text x="175" y="346" text-anchor="middle" font-size="13" fill="#5e5e5e">Solves: land one use case first</text>
+  <text x="505" y="346" text-anchor="middle" font-size="13" fill="#5e5e5e">Solves: load, failures, governance at scale</text>
+  <text x="825" y="346" text-anchor="middle" font-size="13" fill="#5e5e5e">Foundation: Agent communication layer</text>
+  <text x="500" y="392" text-anchor="middle" font-size="13" fill="#8a8a8a">Each step builds on a solid previous one. No skipping steps.</text>
+</svg>

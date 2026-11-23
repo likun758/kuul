@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">Three waves of extensions: get approved, then operate, then expand</text>
+
+  <!-- column headers -->
+  <g text-anchor="middle">
+    <rect x="40" y="56" width="290" height="44" rx="10" fill="#fff4f2" stroke="#c9776c" stroke-width="1.6"/>
+    <text x="185" y="76" font-size="15" font-weight="700" fill="#8c3a2e">P0 · Production readiness</text>
+    <text x="185" y="93" font-size="12" fill="#7a3328">Needed to pass enterprise security review</text>
+    <rect x="355" y="56" width="290" height="44" rx="10" fill="#fffaf0" stroke="#d9a441" stroke-width="1.6"/>
+    <text x="500" y="76" font-size="15" font-weight="700" fill="#8a5a00">P1 · Operating at scale</text>
+    <text x="500" y="93" font-size="12" fill="#8a5a00">Many teams, many Agents, always on</text>
+    <rect x="670" y="56" width="290" height="44" rx="10" fill="#ecebff" stroke="#9b92e0" stroke-width="1.6"/>
+    <text x="815" y="76" font-size="15" font-weight="700" fill="#3f348f">P2 · Enhance and expand</text>
+    <text x="815" y="93" font-size="12" fill="#4f45a6">Scale, smarter Agents, ecosystem</text>
+  </g>
+
+  <!-- P0 -->
+  <g font-size="13" text-anchor="middle" fill="#7a3328">
+    <rect x="40" y="116" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="141" font-weight="600">Identity: SSO · RBAC · tenants</text>
+    <rect x="40" y="192" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="217" font-weight="600">Human approval (three-level decisions)</text>
+    <rect x="40" y="268" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="293">Enterprise IM: WeCom · Feishu · DingTalk</text>
+    <rect x="40" y="318" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="343">Tamper-proof audit + SIEM export</text>
+    <rect x="40" y="368" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="393">Container-level sandbox</text>
+  </g>
+  <line x1="185" y1="158" x2="185" y2="190" stroke="#c9776c" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="195" y="179" font-size="11" fill="#8c3a2e">who approves</text>
+  <line x1="185" y1="266" x2="185" y2="234" stroke="#c9776c" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="195" y="255" font-size="11" fill="#8c3a2e">where (approval cards)</text>
+
+  <!-- P1 -->
+  <g font-size="13" text-anchor="middle" fill="#8a5a00">
+    <rect x="355" y="116" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="141">Skill review &amp; signing · KMS / Vault</text>
+    <rect x="355" y="166" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="191">Injection and exfiltration defense</text>
+    <rect x="355" y="216" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="241">Provider failover · streaming · quotas</text>
+    <rect x="355" y="266" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="291">Memory search · summaries · extraction</text>
+    <rect x="355" y="316" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="341">Fuller Web Service · scheduled jobs</text>
+    <rect x="355" y="366" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="391">Admin console · observability · Helm</text>
+  </g>
+
+  <!-- P2 -->
+  <g font-size="13" text-anchor="middle" fill="#3f348f">
+    <rect x="670" y="116" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="141" font-weight="600">External state → cluster HA</text>
+    <rect x="670" y="166" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="191">Episodic memory · experience → Skills</text>
+    <rect x="670" y="216" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="241">Sub-agents · parallel tools · resumable tasks</text>
+    <rect x="670" y="266" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="291">Adaptive routing · on-demand tools</text>
+    <rect x="670" y="316" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="341">Expose as MCP Server · explore A2A</text>
+    <rect x="670" y="366" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="391">Enterprise connectors · Native Image</text>
+  </g>
+
+  <!-- gates -->
+  <text x="500" y="432" text-anchor="middle" font-size="12" fill="#8a5a00">Gate: Skill review and signing must ship before community Skill import opens</text>
+
+  <!-- roadmap mapping -->
+  <rect x="40" y="452" width="605" height="46" rx="10" fill="#e9f6ee" stroke="#6fb38a"/>
+  <text x="342" y="472" text-anchor="middle" font-size="13" font-weight="600" fill="#2e6b45">Roadmap · single-node stage</text>
+  <text x="342" y="490" text-anchor="middle" font-size="12" fill="#2e6b45">Core + P0 = a production-ready single node; P1 keeps it running across teams</text>
+  <rect x="670" y="452" width="290" height="46" rx="10" fill="#f6f5f1" stroke="#cfcdc6"/>
+  <text x="815" y="472" text-anchor="middle" font-size="13" font-weight="600" fill="#4a4a4a">Roadmap · mid-term distributed</text>
+  <text x="815" y="490" text-anchor="middle" font-size="12" fill="#555">Cluster HA; A2A paves the way ahead</text>
+
+  <!-- community -->
+  <rect x="40" y="514" width="920" height="64" rx="10" fill="#f6f5f1" stroke="#cfcdc6" stroke-dasharray="6 4"/>
+  <text x="60" y="538" font-size="13" font-weight="600" fill="#4a4a4a">Community-driven (not scheduled, never blocks the main line)</text>
+  <text x="60" y="562" font-size="12" fill="#666">Skills Marketplace · multi-language SDKs · visual Profile editor · K8s Operator · multi-region · voice · edge · mobile admin · docs</text>
+</svg>
