@@ -131,6 +131,16 @@ java -jar kuul-cli/target/kuul-cli-0.1.0-SNAPSHOT-exec.jar --version   # 独立 
 - 训练数据多以 Spring Boot 3 / Spring AI 1.x 为主，写 Boot 4 / Spring AI 2.x 时先查官方文档，不要凭记忆写 API。编译错误往往说明用了旧 API。
 - MCP 以 2026-07-28 版规范为基线，MCP 相关代码收敛在 `McpClientService`。
 
+## 项目官网（site/）
+
+- VitePress 1.6.4，中英双语，部署在 GitHub Pages：<https://likun758.github.io/kuul/>（`base: /kuul/`）。不进入 Maven 构建。
+- 中文在根路径（`site/docs/`），英文在 `/en/`（`site/en/docs/`），两边页面一一对应、文件名相同；改一边必须同步另一边。首页文案在 `Home.vue` 里用 `t('中文', 'English')` 维护。
+- 本地预览：`cd site && npm install && npm run docs:dev`；构建：`npm run docs:build`（会检查死链）。
+- 首页是自定义组件 `site/.vitepress/theme/components/Home.vue`；文档页在 `site/docs/`，内容来自 `docs/init/`，改设计时两边同步。
+- 视觉风格：浅色优先、留白充足、不用卡片框住内容；标题用 Montserrat 细字重（400），正文 DM Sans（均通过 `@fontsource` 打包，不走 Google Fonts）；毛玻璃 + 胶囊按钮；Hero 背景是 `Home.vue` 里的流线 canvas 动画（仅鼠标设备、尊重 reduced-motion）。颜色等设计变量集中在 `custom.css` 的 `--kuul-*`。
+- 尚未实现的功能在页面上用 `<Badge type="info" text="设计目标" />`（英文 `design target`）标注，实现后改为 `可用` / `available`。
+- `.github/workflows/site.yml`：PR 上只构建；合入 main 后部署 Pages。Java CI 忽略 `site/**` 的改动。
+
 ## 文档约定
 
 - 文档用中文，中英文之间加空格。
