@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">Plugin Tool 三种扩展方式：能用左边，就不用右边</text>
+
+  <line x1="80" y1="66" x2="920" y2="66" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="80" y="58" font-size="12" fill="#888">门槛低 · 复用社区</text>
+  <text x="920" y="58" text-anchor="end" font-size="12" fill="#888">集成深 · 工程量大</text>
+
+  <g font-size="12">
+    <rect x="80" y="84" width="260" height="250" rx="12" fill="#ddd9ff" stroke="#6b5fd3" stroke-width="2"/>
+    <text x="210" y="114" text-anchor="middle" font-size="16" font-weight="700" fill="#2f2680">零代码（主推）</text>
+    <text x="210" y="138" text-anchor="middle" font-size="13" fill="#3f348f">SKILL.md + 现成 MCP Server</text>
+    <text x="100" y="172" fill="#3f348f">· 只写一份 markdown 描述意图</text>
+    <text x="100" y="196" fill="#3f348f">· 复用 GitHub / Slack / Notion 等</text>
+    <text x="100" y="216" fill="#3f348f">  社区 MCP Server</text>
+    <text x="100" y="240" fill="#3f348f">· LLM 自己理解、选择并组合工具</text>
+    <text x="100" y="274" fill="#555">例：每日 PR 评审进度推送 Slack</text>
+    <text x="100" y="296" fill="#555">→ 1 个 SKILL.md + 2 个 MCP</text>
+    <text x="100" y="318" fill="#555">→ 0 行代码</text>
+
+    <rect x="370" y="84" width="260" height="250" rx="12" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="500" y="114" text-anchor="middle" font-size="16" font-weight="700" fill="#3f348f">轻代码</text>
+    <text x="500" y="138" text-anchor="middle" font-size="13" fill="#3f348f">自写 MCP Server</text>
+    <text x="390" y="172" fill="#3f348f">· 任何语言：Python / Go / Shell</text>
+    <text x="390" y="196" fill="#3f348f">· 标准 MCP 协议（JSON-RPC）</text>
+    <text x="390" y="220" fill="#3f348f">· kuul 作为 MCP Client 连入</text>
+    <text x="390" y="244" fill="#3f348f">· stdio 或 Streamable HTTP</text>
+    <text x="390" y="284" fill="#555">适合：自家 ERP / CRM / CMDB，</text>
+    <text x="390" y="306" fill="#555">社区没有现成 Server 时</text>
+
+    <rect x="660" y="84" width="260" height="250" rx="12" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="790" y="114" text-anchor="middle" font-size="16" font-weight="700" fill="#3f348f">重代码</text>
+    <text x="790" y="138" text-anchor="middle" font-size="13" fill="#3f348f">@Tool 注解 Spring Bean</text>
+    <text x="680" y="172" fill="#3f348f">· 启动时自动扫描注册</text>
+    <text x="680" y="196" fill="#3f348f">· 直接调企业内部 Java 服务</text>
+    <text x="680" y="220" fill="#3f348f">· 复用现有 Bean 与 Spring Security</text>
+    <text x="680" y="244" fill="#3f348f">· 性能与集成深度最好</text>
+    <text x="680" y="284" fill="#555">适合：Java 体系内的深度集成，</text>
+    <text x="680" y="306" fill="#555">kuul 相对 Node / Python 的主场</text>
+  </g>
+
+  <rect x="80" y="350" width="840" height="36" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+  <text x="500" y="373" text-anchor="middle" font-size="12" fill="#8a5a00">三种方式产出的 Tool 进入同一个 Tool 池，统一经过 Profile 级 Tool Policy、白名单校验与审计记录</text>
+</svg>

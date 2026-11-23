@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <text x="500" y="38" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">kuul 演进路线：从单机到分布式</text>
+
+  <!-- layer bands -->
+  <text x="40" y="84" font-size="13" fill="#8a8a8a">底座本身的分布式（运维层面）</text>
+  <line x1="40" y1="92" x2="640" y2="92" stroke="#d9d6cf"/>
+  <text x="680" y="84" font-size="13" fill="#8a8a8a">Agent 之间的分布式（协作层面）</text>
+  <line x1="680" y1="92" x2="960" y2="92" stroke="#d9d6cf"/>
+
+  <!-- stage 1 -->
+  <rect x="40" y="110" width="270" height="200" rx="14" fill="#e3f3ec" stroke="#3f8f6c" stroke-width="2"/>
+  <text x="175" y="144" text-anchor="middle" font-size="18" font-weight="700" fill="#1f5e45">当前 · 单机私有部署</text>
+  <g font-size="14" fill="#245a44">
+    <text x="64" y="180">· 一个实例服务一个部门 / 场景</text>
+    <text x="64" y="206">· 单 JAR / 单容器，嵌入式存储</text>
+    <text x="64" y="232">· 治理内建：基线 → RBAC / SSO / 审批</text>
+    <text x="64" y="258">· 先跑通、跑稳、过安全审查</text>
+  </g>
+  <text x="175" y="294" text-anchor="middle" font-size="13" font-weight="600" fill="#1f5e45">当前全部重心</text>
+
+  <!-- stage 2 -->
+  <rect x="370" y="110" width="270" height="200" rx="14" fill="#f1f0ec" stroke="#9c9890"/>
+  <text x="505" y="144" text-anchor="middle" font-size="18" font-weight="700" fill="#3a3a3a">中期 · 底座分布式</text>
+  <g font-size="14" fill="#4f4f4f">
+    <text x="394" y="180">· 实例无状态，状态外置</text>
+    <text x="394" y="206">· 消息恰好一次消费、任务租约</text>
+    <text x="394" y="232">· 存储层多租户隔离</text>
+    <text x="394" y="258">· K8s 多副本、高可用、水平扩展</text>
+  </g>
+  <text x="505" y="294" text-anchor="middle" font-size="13" font-weight="600" fill="#5e5e5e">架构预留</text>
+
+  <!-- stage 3 -->
+  <rect x="690" y="110" width="270" height="200" rx="14" fill="#f1f0ec" stroke="#9c9890" stroke-dasharray="6 4"/>
+  <text x="825" y="144" text-anchor="middle" font-size="18" font-weight="700" fill="#3a3a3a">远期 · 分布式 Agent 协作</text>
+  <g font-size="14" fill="#4f4f4f">
+    <text x="714" y="180">· 跨节点 / 跨部门 / 跨组织</text>
+    <text x="714" y="206">· Agent 互相发现、委托、协同</text>
+    <text x="714" y="232">· 身份与审计上下文随链路传递</text>
+    <text x="714" y="258">· 协议基础：A2A 等</text>
+  </g>
+  <text x="825" y="294" text-anchor="middle" font-size="13" font-weight="600" fill="#5e5e5e">愿景</text>
+
+  <line x1="312" y1="210" x2="366" y2="210" stroke="#6b6b6b" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="642" y1="210" x2="686" y2="210" stroke="#6b6b6b" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- bottom notes -->
+  <text x="175" y="346" text-anchor="middle" font-size="13" fill="#5e5e5e">解决：一个场景先落地</text>
+  <text x="505" y="346" text-anchor="middle" font-size="13" fill="#5e5e5e">解决：扛量、扛故障、规模化治理</text>
+  <text x="825" y="346" text-anchor="middle" font-size="13" fill="#5e5e5e">技术地基：Agent 通信底座</text>
+  <text x="500" y="392" text-anchor="middle" font-size="13" fill="#8a8a8a">每一步都建立在前一步做扎实的基础上，不跳步</text>
+</svg>

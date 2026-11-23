@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">ReAct 循环与 Tool 执行管线</text>
+
+  <!-- loop column -->
+  <g font-size="13">
+    <rect x="60" y="64" width="300" height="46" rx="10" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="210" y="92" text-anchor="middle" font-weight="600" fill="#3f348f">① 用户消息追加到 Session</text>
+
+    <rect x="60" y="134" width="300" height="62" rx="10" fill="#ddd9ff" stroke="#6b5fd3"/>
+    <text x="210" y="160" text-anchor="middle" font-weight="600" fill="#2f2680">② PromptBuilder 组装</text>
+    <text x="210" y="182" text-anchor="middle" font-size="12" fill="#3f348f">system · 长期记忆 · 历史（近 N 轮）· Tool 列表</text>
+
+    <rect x="60" y="220" width="300" height="62" rx="10" fill="#ddd9ff" stroke="#6b5fd3"/>
+    <text x="210" y="246" text-anchor="middle" font-weight="600" fill="#2f2680">③ ProviderService 调用 LLM</text>
+    <text x="210" y="268" text-anchor="middle" font-size="12" fill="#3f348f">关闭框架自动执行 · 写 llm_calls</text>
+
+    <polygon points="210,306 330,346 210,386 90,346" fill="#ffffff" stroke="#6b5fd3" stroke-width="1.5"/>
+    <text x="210" y="351" text-anchor="middle" font-weight="600" fill="#2f2680">有 tool_calls？</text>
+
+    <rect x="60" y="420" width="300" height="46" rx="10" fill="#e9f6ee" stroke="#6fb38a"/>
+    <text x="210" y="448" text-anchor="middle" font-weight="600" fill="#2e6b45">⑤ 返回最终响应</text>
+  </g>
+  <line x1="210" y1="112" x2="210" y2="132" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="210" y1="198" x2="210" y2="218" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="210" y1="284" x2="210" y2="304" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="210" y1="388" x2="210" y2="418" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="222" y="408" font-size="12" fill="#2e6b45">否</text>
+
+  <!-- to pipeline -->
+  <line x1="332" y1="346" x2="418" y2="346" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="372" y="338" text-anchor="middle" font-size="12" fill="#3f348f">是</text>
+
+  <!-- pipeline -->
+  <rect x="420" y="64" width="520" height="402" rx="14" fill="#faf9ff" stroke="#6b5fd3" stroke-width="1.6"/>
+  <text x="440" y="90" font-size="14" font-weight="700" fill="#2f2680">④ ToolExecutor 管线（逐个顺序执行）</text>
+  <g font-size="12">
+    <rect x="440" y="104" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="129" fill="#3f348f"><tspan font-weight="600">a. 查找</tspan>  ToolRegistry 按名称取 KuulTool，不存在 → not_found</text>
+    <rect x="440" y="154" width="480" height="40" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="456" y="179" fill="#8a5a00"><tspan font-weight="600">b. 授权</tspan>  PolicyGuard：Profile 未授权 → denied（默认拒绝）</text>
+    <rect x="440" y="204" width="480" height="40" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="456" y="229" fill="#8a5a00"><tspan font-weight="600">c. 校验</tspan>  JSON Schema 参数校验 + SandboxChecker 白名单</text>
+    <rect x="440" y="254" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="279" fill="#3f348f"><tspan font-weight="600">d. 执行</tspan>  超时与输出上限；可重试错误指数退避 ≤ 3 次</text>
+    <rect x="440" y="304" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="329" fill="#3f348f"><tspan font-weight="600">e. 记录</tspan>  tool_invocations + 审计事件（参数脱敏）</text>
+    <rect x="440" y="354" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="379" fill="#3f348f"><tspan font-weight="600">f. 回填</tspan>  ToolResult（成功 / 错误 / 可重试）作为 tool 消息入历史</text>
+  </g>
+  <text x="440" y="424" font-size="12" fill="#777">任一步失败都不抛出循环：转成 ToolResult 交给 LLM 自行决策</text>
+  <text x="440" y="446" font-size="12" fill="#777">迭代计数 +1，达到 max_iterations（默认 10）即强制终止</text>
+
+  <!-- back arrow -->
+  <path d="M 680 468 L 680 500 L 30 500 L 30 165 L 58 165" fill="none" stroke="#7a7a7a" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="44" y="490" font-size="12" fill="#777">回到 ②</text>
+</svg>

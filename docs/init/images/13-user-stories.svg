@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">5 个 User Story 的依赖与验收</text>
+
+  <g font-size="12" text-anchor="middle">
+    <rect x="30" y="140" width="160" height="110" rx="12" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="110" y="166" font-size="15" font-weight="700" fill="#2f2680">US-1</text>
+    <text x="110" y="188" font-weight="600" fill="#3f348f">对接 LLM</text>
+    <text x="110" y="212" fill="#555">core · provider</text>
+    <text x="110" y="232" fill="#777">契约测试验收</text>
+
+    <rect x="230" y="140" width="170" height="110" rx="12" fill="#ddd9ff" stroke="#6b5fd3" stroke-width="1.6"/>
+    <text x="315" y="166" font-size="15" font-weight="700" fill="#2f2680">US-2</text>
+    <text x="315" y="188" font-weight="600" fill="#3f348f">ReAct + 治理骨架</text>
+    <text x="315" y="212" fill="#555">core · tool · 治理 · cli</text>
+    <text x="315" y="232" fill="#2e6b45">Demo 1</text>
+
+    <rect x="450" y="66" width="190" height="110" rx="12" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="545" y="92" font-size="15" font-weight="700" fill="#2f2680">US-3</text>
+    <text x="545" y="114" font-weight="600" fill="#3f348f">Memory</text>
+    <text x="545" y="138" fill="#555">memory</text>
+    <text x="545" y="158" fill="#2e6b45">Demo 2</text>
+
+    <rect x="450" y="214" width="190" height="110" rx="12" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="545" y="240" font-size="15" font-weight="700" fill="#2f2680">US-4</text>
+    <text x="545" y="262" font-weight="600" fill="#3f348f">Tool 体系 + 沙箱</text>
+    <text x="545" y="286" fill="#555">tool · core（SKILL.md）</text>
+    <text x="545" y="306" fill="#2e6b45">Demo 3</text>
+
+    <rect x="690" y="140" width="190" height="110" rx="12" fill="#ddd9ff" stroke="#6b5fd3" stroke-width="1.6"/>
+    <text x="785" y="166" font-size="15" font-weight="700" fill="#2f2680">US-5</text>
+    <text x="785" y="188" font-weight="600" fill="#3f348f">Web Service + 收口</text>
+    <text x="785" y="212" fill="#555">web · storage · cli</text>
+    <text x="785" y="232" fill="#2e6b45">Demo 4 · Demo 5</text>
+  </g>
+
+  <line x1="192" y1="195" x2="228" y2="195" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="402" y1="180" x2="448" y2="130" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="402" y1="210" x2="448" y2="262" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="642" y1="130" x2="688" y2="180" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="642" y1="262" x2="688" y2="210" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="545" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="#6b5fd3">可并行</text>
+
+  <rect x="30" y="350" width="940" height="34" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+  <text x="500" y="372" text-anchor="middle" font-size="12" fill="#8a5a00">治理基线不单列 Story：US-2 建好 Tool 管线中的 Policy 与审计，US-4 补全沙箱，US-5 补齐 API Key 与调用记录落库</text>
+</svg>

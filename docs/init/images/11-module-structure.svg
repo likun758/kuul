@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">Maven 多模块结构（依赖自上而下）</text>
+
+  <g font-size="12" text-anchor="middle">
+    <!-- boot -->
+    <rect x="380" y="58" width="240" height="46" rx="10" fill="#f6f5f1" stroke="#cfcdc6"/>
+    <text x="500" y="78" font-size="14" font-weight="600" fill="#4a4a4a">kuul-boot</text>
+    <text x="500" y="96" fill="#666">组装 · fat JAR</text>
+
+    <!-- entry -->
+    <rect x="160" y="132" width="200" height="46" rx="10" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="260" y="152" font-size="14" font-weight="600" fill="#3f348f">kuul-cli</text>
+    <text x="260" y="170" fill="#4f45a6">Picocli 入口 · 13 个命令</text>
+    <rect x="400" y="132" width="200" height="46" rx="10" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="500" y="152" font-size="14" font-weight="600" fill="#3f348f">kuul-web</text>
+    <text x="500" y="170" fill="#4f45a6">REST · 鉴权 · 异常处理</text>
+    <rect x="640" y="132" width="200" height="46" rx="10" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="740" y="152" font-size="14" font-weight="600" fill="#3f348f">kuul-channel</text>
+    <text x="740" y="170" fill="#4f45a6">终端交互 Channel</text>
+
+    <!-- capability -->
+    <rect x="60" y="214" width="160" height="56" rx="10" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="140" y="238" font-size="14" font-weight="600" fill="#3f348f">kuul-provider</text>
+    <text x="140" y="258" fill="#555">能力一</text>
+    <rect x="236" y="214" width="160" height="56" rx="10" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="316" y="238" font-size="14" font-weight="600" fill="#3f348f">kuul-memory</text>
+    <text x="316" y="258" fill="#555">能力三</text>
+    <rect x="412" y="214" width="160" height="56" rx="10" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="492" y="238" font-size="14" font-weight="600" fill="#3f348f">kuul-tool</text>
+    <text x="492" y="258" fill="#555">能力四 · 含 MCP / 沙箱</text>
+    <rect x="588" y="214" width="160" height="56" rx="10" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="668" y="238" font-size="14" font-weight="600" fill="#8a5a00">kuul-governance</text>
+    <text x="668" y="258" fill="#8a5a00">策略 · 审计</text>
+    <rect x="764" y="214" width="160" height="56" rx="10" fill="#f6f5f1" stroke="#cfcdc6"/>
+    <text x="844" y="238" font-size="14" font-weight="600" fill="#4a4a4a">kuul-storage</text>
+    <text x="844" y="258" fill="#555">SQLite · Flyway</text>
+
+    <!-- core -->
+    <rect x="200" y="306" width="600" height="62" rx="12" fill="#ddd9ff" stroke="#6b5fd3" stroke-width="2"/>
+    <text x="500" y="332" font-size="15" font-weight="700" fill="#2f2680">kuul-core（所有模块依赖它，自身不依赖 Spring AI）</text>
+    <text x="500" y="354" fill="#3f348f">ReActLoop · PromptBuilder · ToolExecutor · ContextLoader · 领域模型 · 扩展接口</text>
+  </g>
+
+  <line x1="500" y1="106" x2="500" y2="130" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+  <line x1="500" y1="180" x2="500" y2="212" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+  <line x1="500" y1="272" x2="500" y2="304" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <text x="500" y="400" text-anchor="middle" font-size="12" fill="#888">新增 Channel / Provider / Tool 实现 = 新增模块，不改 kuul-core；Spring AI 只出现在 provider 与 tool 两个适配模块</text>
+</svg>

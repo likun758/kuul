@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="38" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">两个代表性开源 Agent OS 与它们共同留下的空白</text>
+
+  <!-- OpenClaw -->
+  <rect x="60" y="66" width="400" height="250" rx="14" fill="#fdecea" stroke="#c9776c"/>
+  <text x="260" y="102" text-anchor="middle" font-size="20" font-weight="700" fill="#8c3a2e">OpenClaw</text>
+  <text x="260" y="128" text-anchor="middle" font-size="13" fill="#a0503f">TypeScript / Node.js · MIT · 2025-11 起（原 Clawdbot）</text>
+  <g font-size="14" fill="#7a3328">
+    <text x="90" y="166">中心：Gateway 控制平面（hub-and-spoke）</text>
+    <text x="90" y="194">取向：消费级、开发者优先、生态广度</text>
+    <text x="90" y="222">强项：20+ 渠道、ClawHub 技能市场、社区</text>
+    <text x="90" y="250">软肋：技能供应链、公网暴露、RCE 漏洞</text>
+    <text x="90" y="278">企业化：靠 NemoClaw / Tank OS / 云托管外挂</text>
+  </g>
+  <text x="260" y="304" text-anchor="middle" font-size="12" fill="#9a6a62">约 39.5 万 Star · v2026.11.6（2026-11）</text>
+
+  <!-- Hermes -->
+  <rect x="540" y="66" width="400" height="250" rx="14" fill="#e3f3ec" stroke="#5fa385"/>
+  <text x="740" y="102" text-anchor="middle" font-size="20" font-weight="700" fill="#1f5e45">Hermes Agent</text>
+  <text x="740" y="128" text-anchor="middle" font-size="13" fill="#2f7558">Python · MIT · 2026-02（Nous Research）</text>
+  <g font-size="14" fill="#245a44">
+    <text x="570" y="166">中心：Agent 内核 + 学习闭环</text>
+    <text x="570" y="194">取向：工程级、健壮性、越用越聪明</text>
+    <text x="570" y="222">强项：分层记忆、自我进化技能、安全扫描</text>
+    <text x="570" y="250">软肋：进化不可控、权限面大、审计链长</text>
+    <text x="570" y="278">企业化：团队版 / 托管 / Enterprise 层级起步</text>
+  </g>
+  <text x="740" y="304" text-anchor="middle" font-size="12" fill="#5d8c77">约 26.5 万 Star · 日用量约 OpenClaw 7.5 倍（2026-11）</text>
+
+  <!-- arrows to gap -->
+  <line x1="260" y1="318" x2="400" y2="378" stroke="#6b6b6b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="740" y1="318" x2="600" y2="378" stroke="#6b6b6b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- gap -->
+  <rect x="150" y="382" width="700" height="120" rx="14" fill="#f1f0ec" stroke="#9c9890"/>
+  <text x="500" y="414" text-anchor="middle" font-size="18" font-weight="700" fill="#3a3a3a">共同空白：都是"个人 Agent OS"，不是"组织 Agent OS"</text>
+  <g font-size="14" fill="#4f4f4f">
+    <text x="190" y="448">① 企业级治理：多租户、RBAC、SSO、合规审计</text>
+    <text x="530" y="448">② 企业 IT 深度集成：ERP / CRM / CMDB</text>
+    <text x="190" y="480">③ 安全是外挂而非内核：供应链、最小授权</text>
+    <text x="530" y="480">④ Java 生态缺位 · 单机为主、无集群</text>
+  </g>
+
+  <line x1="500" y1="504" x2="500" y2="534" stroke="#6b5fd3" stroke-width="1.8" marker-end="url(#arr)"/>
+  <rect x="330" y="538" width="340" height="48" rx="12" fill="#ecebff" stroke="#6b5fd3" stroke-width="2"/>
+  <text x="500" y="569" text-anchor="middle" font-size="16" font-weight="700" fill="#3f348f">kuul 的起点：企业可控 + Java 原生</text>
+</svg>

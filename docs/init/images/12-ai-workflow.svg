@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">kuul AI 编程两阶段：Spec-Kit 主体开发 → 提示词增量开发</text>
+
+  <!-- inputs -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="40" y="70" width="190" height="44" rx="8" fill="#f6f5f1" stroke="#cfcdc6"/>
+    <text x="135" y="97" fill="#4a4a4a">需求 §1 + 方案 §1.2</text>
+    <rect x="40" y="130" width="190" height="44" rx="8" fill="#f6f5f1" stroke="#cfcdc6"/>
+    <text x="135" y="157" fill="#4a4a4a">RequirementAnalysis §3 · §6</text>
+    <rect x="40" y="190" width="190" height="44" rx="8" fill="#f6f5f1" stroke="#cfcdc6"/>
+    <text x="135" y="217" fill="#4a4a4a">TechnicalSolution 全文</text>
+  </g>
+  <line x1="232" y1="92" x2="268" y2="92" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+  <line x1="232" y1="152" x2="268" y2="152" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+  <line x1="232" y1="212" x2="268" y2="212" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <!-- phase 1 -->
+  <rect x="260" y="56" width="700" height="250" rx="14" fill="#faf9ff" stroke="#6b5fd3" stroke-width="2"/>
+  <text x="280" y="80" font-size="14" font-weight="700" fill="#2f2680">阶段一 · 主体开发（greenfield，Spec-Kit）</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="280" y="96" width="150" height="34" rx="8" fill="#ddd9ff" stroke="#6b5fd3"/>
+    <text x="355" y="117" font-weight="600" fill="#2f2680">constitution</text>
+    <rect x="280" y="140" width="150" height="34" rx="8" fill="#ddd9ff" stroke="#6b5fd3"/>
+    <text x="355" y="161" font-weight="600" fill="#2f2680">specify → clarify</text>
+    <rect x="280" y="184" width="150" height="34" rx="8" fill="#ddd9ff" stroke="#6b5fd3"/>
+    <text x="355" y="205" font-weight="600" fill="#2f2680">plan（人工 review）</text>
+
+    <line x1="432" y1="201" x2="468" y2="201" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+
+    <rect x="470" y="96" width="470" height="196" rx="10" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="705" y="118" font-size="13" font-weight="700" fill="#3f348f">每个 User Story 循环一次</text>
+    <rect x="490" y="132" width="96" height="34" rx="8" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="538" y="153" fill="#3f348f">tasks</text>
+    <rect x="606" y="132" width="96" height="34" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="654" y="153" fill="#8a5a00">analyze</text>
+    <rect x="722" y="132" width="96" height="34" rx="8" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="770" y="153" fill="#3f348f">implement</text>
+    <rect x="838" y="132" width="86" height="34" rx="8" fill="#e9f6ee" stroke="#6fb38a"/>
+    <text x="881" y="153" fill="#2e6b45">Demo + E2E</text>
+    <line x1="588" y1="149" x2="604" y2="149" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+    <line x1="704" y1="149" x2="720" y2="149" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+    <line x1="820" y1="149" x2="836" y2="149" stroke="#7a7a7a" stroke-width="1.3" marker-end="url(#arr)"/>
+
+    <rect x="490" y="182" width="434" height="30" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="707" y="202" fill="#8a5a00">审查清单（§5.2）+ analyze 再跑一次 → 修正漂移</text>
+    <rect x="490" y="222" width="434" height="30" rx="8" fill="#f6f5f1" stroke="#cfcdc6"/>
+    <text x="707" y="242" fill="#4a4a4a">git commit + tag us-N，作为可回退的稳定点</text>
+    <text x="707" y="276" fill="#666">US-1 → US-2 → （US-3 ∥ US-4）→ US-5</text>
+  </g>
+
+  <line x1="610" y1="308" x2="610" y2="336" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="622" y="327" font-size="12" fill="#777">1.0 发布，artifacts 留在仓库</text>
+
+  <!-- phase 2 -->
+  <rect x="260" y="340" width="700" height="100" rx="14" fill="#f6f5f1" stroke="#cfcdc6" stroke-width="1.6"/>
+  <text x="280" y="364" font-size="14" font-weight="700" fill="#4a4a4a">阶段二 · 增量开发（Claude Code + 手动提示词）</text>
+  <g font-size="12" fill="#555">
+    <text x="280" y="390">· 单次改动 1–3 个文件：Bug、新 Tool、新 Channel、扩展功能</text>
+    <text x="280" y="412">· CLAUDE.md 引用 constitution 与审查清单，约束每次会话</text>
+    <text x="280" y="432">· 大 feature（新模块 / 改原则 / 跨多个能力）再走一次 Spec-Kit</text>
+  </g>
+</svg>
