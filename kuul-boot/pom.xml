@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.kuul</groupId>
+        <artifactId>kuul-parent</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>kuul-boot</artifactId>
+    <description>Assembles all modules into the executable kuul.jar.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-storage</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-governance</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-provider</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-memory</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-tool</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-channel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.kuul</groupId>
+            <artifactId>kuul-cli</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>kuul</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>io.kuul.boot.KuulMain</mainClass>
+                    <!-- PropertiesLauncher so .kuul/plugins/ JARs can be added via loader.path -->
+                    <layout>ZIP</layout>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

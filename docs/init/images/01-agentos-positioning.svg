@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <text x="500" y="38" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">Agent OS 在技术栈中的位置</text>
+
+  <!-- layer labels -->
+  <text x="40" y="118" font-size="13" fill="#8a8a8a">应用层</text>
+  <text x="40" y="268" font-size="13" fill="#8a8a8a">运行时层</text>
+  <text x="40" y="418" font-size="13" fill="#8a8a8a">组件层</text>
+
+  <!-- orchestration -->
+  <rect x="250" y="70" width="440" height="84" rx="12" fill="#f1f0ec" stroke="#b9b6ad"/>
+  <text x="470" y="104" text-anchor="middle" font-size="18" font-weight="600" fill="#3a3a3a">编排平台</text>
+  <text x="470" y="132" text-anchor="middle" font-size="14" fill="#5e5e5e">Dify、Coze · 产物是一条 workflow</text>
+
+  <!-- Agent OS -->
+  <rect x="250" y="220" width="440" height="100" rx="12" fill="#ecebff" stroke="#6b5fd3" stroke-width="2"/>
+  <text x="470" y="256" text-anchor="middle" font-size="19" font-weight="700" fill="#3f348f">Agent OS（kuul 所在层）</text>
+  <text x="470" y="284" text-anchor="middle" font-size="14" fill="#4f45a6">产物是配置出来的常驻 Agent</text>
+  <text x="470" y="306" text-anchor="middle" font-size="14" fill="#4f45a6">装在企业自己的机器上 · 统一渠道 / 模型 / 记忆 / 工具 / 治理</text>
+
+  <!-- framework -->
+  <rect x="250" y="386" width="440" height="84" rx="12" fill="#f1f0ec" stroke="#b9b6ad"/>
+  <text x="470" y="420" text-anchor="middle" font-size="18" font-weight="600" fill="#3a3a3a">框架</text>
+  <text x="470" y="448" text-anchor="middle" font-size="14" fill="#5e5e5e">Spring AI、LangChain4j、LangChain · 产物是代码</text>
+
+  <!-- arrows -->
+  <line x1="470" y1="218" x2="470" y2="158" stroke="#6b6b6b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="482" y="194" font-size="13" fill="#5e5e5e">调用其 API，跑在其上</text>
+  <line x1="470" y1="384" x2="470" y2="324" stroke="#6b6b6b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="482" y="360" font-size="13" fill="#5e5e5e">被复用为 LLM 调用等底层组件</text>
+
+  <!-- peers -->
+  <rect x="740" y="190" width="230" height="74" rx="12" fill="#fdecea" stroke="#c9776c"/>
+  <text x="855" y="220" text-anchor="middle" font-size="16" font-weight="600" fill="#8c3a2e">个人 Agent OS</text>
+  <text x="855" y="246" text-anchor="middle" font-size="13" fill="#8c3a2e">OpenClaw、Hermes Agent</text>
+  <text x="855" y="282" text-anchor="middle" font-size="12" fill="#7a7a7a">同层 · 面向个人与小团队</text>
+
+  <rect x="740" y="306" width="230" height="74" rx="12" fill="#fbf0dc" stroke="#c49a4c"/>
+  <text x="855" y="336" text-anchor="middle" font-size="16" font-weight="600" fill="#7a5414">云厂商托管平台 / SaaS</text>
+  <text x="855" y="362" text-anchor="middle" font-size="13" fill="#7a5414">AgentCore、Foundry、Agentforce</text>
+  <text x="855" y="398" text-anchor="middle" font-size="12" fill="#7a7a7a">另一象限 · 绑定云生态，不可私有</text>
+
+  <line x1="692" y1="250" x2="738" y2="232" stroke="#b0a9a0" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <line x1="692" y1="290" x2="738" y2="340" stroke="#b0a9a0" stroke-width="1.4" stroke-dasharray="5 4"/>
+
+  <!-- bottom resources -->
+  <rect x="250" y="496" width="440" height="40" rx="10" fill="#ffffff" stroke="#cfcdc6" stroke-dasharray="4 3"/>
+  <text x="470" y="522" text-anchor="middle" font-size="13" fill="#6e6e6e">模型（外部 API / 私有化 vLLM、Ollama）· 企业 IT 系统 · 工具（MCP）</text>
+</svg>

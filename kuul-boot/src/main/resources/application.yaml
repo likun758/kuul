@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: kuul
+  threads:
+    virtual:
+      enabled: true
+  main:
+    banner-mode: off

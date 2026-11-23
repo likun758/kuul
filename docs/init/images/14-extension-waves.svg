@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">扩展功能三批推进：先准入，再运营，后扩展</text>
+
+  <!-- column headers -->
+  <g text-anchor="middle">
+    <rect x="40" y="56" width="290" height="44" rx="10" fill="#fff4f2" stroke="#c9776c" stroke-width="1.6"/>
+    <text x="185" y="76" font-size="15" font-weight="700" fill="#8c3a2e">P0 · 生产准入</text>
+    <text x="185" y="93" font-size="12" fill="#7a3328">不做完就过不了企业安全审查</text>
+    <rect x="355" y="56" width="290" height="44" rx="10" fill="#fffaf0" stroke="#d9a441" stroke-width="1.6"/>
+    <text x="500" y="76" font-size="15" font-weight="700" fill="#8a5a00">P1 · 规模化运营</text>
+    <text x="500" y="93" font-size="12" fill="#8a5a00">多部门、多 Agent 长期在线</text>
+    <rect x="670" y="56" width="290" height="44" rx="10" fill="#ecebff" stroke="#9b92e0" stroke-width="1.6"/>
+    <text x="815" y="76" font-size="15" font-weight="700" fill="#3f348f">P2 · 增强与扩展</text>
+    <text x="815" y="93" font-size="12" fill="#4f45a6">规模化、智能增强、生态互通</text>
+  </g>
+
+  <!-- P0 -->
+  <g font-size="13" text-anchor="middle" fill="#7a3328">
+    <rect x="40" y="116" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="141" font-weight="600">身份：SSO · RBAC · 租户</text>
+    <rect x="40" y="192" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="217" font-weight="600">人工审批节点（三级决策）</text>
+    <rect x="40" y="268" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="293">企业 IM：企微 · 飞书 · 钉钉</text>
+    <rect x="40" y="318" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="343">防篡改审计 + SIEM 导出</text>
+    <rect x="40" y="368" width="290" height="40" rx="8" fill="#ffffff" stroke="#c9776c"/>
+    <text x="185" y="393">容器级沙箱</text>
+  </g>
+  <line x1="185" y1="158" x2="185" y2="190" stroke="#c9776c" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="195" y="179" font-size="11" fill="#8c3a2e">谁能批</text>
+  <line x1="185" y1="266" x2="185" y2="234" stroke="#c9776c" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="195" y="255" font-size="11" fill="#8c3a2e">在哪批（卡片）</text>
+
+  <!-- P1 -->
+  <g font-size="13" text-anchor="middle" fill="#8a5a00">
+    <rect x="355" y="116" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="141">Skill 审核签名 · KMS / Vault</text>
+    <rect x="355" y="166" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="191">注入与外泄防御</text>
+    <rect x="355" y="216" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="241">Provider 容灾 · 流式 · 配额限流</text>
+    <rect x="355" y="266" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="291">记忆检索 · 摘要压缩 · 自动抽取</text>
+    <rect x="355" y="316" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="341">Web Service 补全 · 定时任务</text>
+    <rect x="355" y="366" width="290" height="40" rx="8" fill="#ffffff" stroke="#d9a441"/>
+    <text x="500" y="391">管理台 · 可观测 · Helm 部署</text>
+  </g>
+
+  <!-- P2 -->
+  <g font-size="13" text-anchor="middle" fill="#3f348f">
+    <rect x="670" y="116" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="141" font-weight="600">状态外置 → 集群高可用</text>
+    <rect x="670" y="166" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="191">情景记忆 · 经验沉淀为 Skill</text>
+    <rect x="670" y="216" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="241">子 Agent · 并行 Tool · 长任务恢复</text>
+    <rect x="670" y="266" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="291">自适应路由 · Tool 按需加载</text>
+    <rect x="670" y="316" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="341">MCP Server 暴露 · A2A 探索</text>
+    <rect x="670" y="366" width="290" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="815" y="391">企业系统 connector · Native Image</text>
+  </g>
+
+  <!-- gates -->
+  <text x="500" y="432" text-anchor="middle" font-size="12" fill="#8a5a00">门槛：开放社区 Skill 导入之前，必须先完成审核签名</text>
+
+  <!-- roadmap mapping -->
+  <rect x="40" y="452" width="605" height="46" rx="10" fill="#e9f6ee" stroke="#6fb38a"/>
+  <text x="342" y="472" text-anchor="middle" font-size="13" font-weight="600" fill="#2e6b45">演进路线 · 单机阶段</text>
+  <text x="342" y="490" text-anchor="middle" font-size="12" fill="#2e6b45">核心 + P0 = 可上生产的单机版；P1 让它在多部门长期运营</text>
+  <rect x="670" y="452" width="290" height="46" rx="10" fill="#f6f5f1" stroke="#cfcdc6"/>
+  <text x="815" y="472" text-anchor="middle" font-size="13" font-weight="600" fill="#4a4a4a">演进路线 · 中期分布式</text>
+  <text x="815" y="490" text-anchor="middle" font-size="12" fill="#555">集群高可用；A2A 为远期协作铺路</text>
+
+  <!-- community -->
+  <rect x="40" y="514" width="920" height="64" rx="10" fill="#f6f5f1" stroke="#cfcdc6" stroke-dasharray="6 4"/>
+  <text x="60" y="538" font-size="13" font-weight="600" fill="#4a4a4a">社区共建（不排期，不阻塞主线）</text>
+  <text x="60" y="562" font-size="12" fill="#666">Skills Marketplace · 多语言 SDK · 可视化 Profile 编辑器 · K8s Operator · 多区域 · Voice · 边缘部署 · 移动端管理台 · 配套文档</text>
+</svg>
