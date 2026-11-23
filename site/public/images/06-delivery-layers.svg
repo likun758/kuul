@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <rect width="1000" height="480" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">kuul 交付分层：内核是地基，治理是终局</text>
+
+  <!-- community -->
+  <rect x="60" y="64" width="660" height="80" rx="12" fill="#f6f5f1" stroke="#cfcdc6" stroke-dasharray="6 4"/>
+  <text x="84" y="92" font-size="15" font-weight="700" fill="#4a4a4a">社区共建 · 长期方向</text>
+  <text x="84" y="118" font-size="12" fill="#666">Skills Marketplace · 多语言 SDK · 可视化 Profile 编辑器 · K8s Operator · 多区域 · Voice · 边缘部署</text>
+
+  <!-- governance -->
+  <rect x="60" y="158" width="660" height="120" rx="12" fill="#fff4f2" stroke="#c9776c" stroke-width="1.6"/>
+  <text x="84" y="186" font-size="15" font-weight="700" fill="#8c3a2e">扩展阶段 · 企业治理层 + 生产化（差异化所在）</text>
+  <text x="84" y="214" font-size="12" fill="#7a3328">P0 生产准入：SSO · RBAC · 租户 · 人工审批 · 防篡改审计 + SIEM · 容器沙箱 · 企业 IM</text>
+  <text x="84" y="238" font-size="12" fill="#7a3328">P1 规模化运营：Skill 签名 · KMS / Vault · Provider 容灾 · 配额限流 · 记忆检索 · 管理台 · 可观测</text>
+  <text x="84" y="262" font-size="12" fill="#7a3328">P2 增强与扩展：集群高可用 · 情景记忆 · 子 Agent · MCP Server · A2A · 企业 connector</text>
+
+  <!-- core -->
+  <rect x="60" y="292" width="660" height="150" rx="12" fill="#ddd9ff" stroke="#6b5fd3" stroke-width="2"/>
+  <text x="84" y="320" font-size="15" font-weight="700" fill="#2f2680">核心阶段 · 运行时内核</text>
+  <g font-size="12" fill="#3f348f">
+    <rect x="84" y="334" width="118" height="34" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="143" y="356" text-anchor="middle">① 对接 LLM</text>
+    <rect x="210" y="334" width="118" height="34" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="269" y="356" text-anchor="middle">② ReAct 循环</text>
+    <rect x="336" y="334" width="118" height="34" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="395" y="356" text-anchor="middle">③ Memory</text>
+    <rect x="462" y="334" width="118" height="34" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="521" y="356" text-anchor="middle">④ Tool / MCP</text>
+    <rect x="588" y="334" width="118" height="34" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="647" y="356" text-anchor="middle">⑤ Web Service</text>
+  </g>
+  <rect x="84" y="380" width="622" height="44" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+  <text x="395" y="400" text-anchor="middle" font-size="12" font-weight="600" fill="#8a5a00">治理基线（day one 内建）</text>
+  <text x="395" y="417" text-anchor="middle" font-size="12" fill="#8a5a00">Tool Policy 默认拒绝 · 应用层白名单沙箱 · 审计日志 · API Key · 密钥外置</text>
+
+  <!-- right annotations -->
+  <line x1="740" y1="218" x2="770" y2="218" stroke="#c9776c" stroke-width="1.4"/>
+  <text x="780" y="212" font-size="13" font-weight="600" fill="#8c3a2e">Agent OS</text>
+  <text x="780" y="232" font-size="12" fill="#7a3328">让一群 Agent 在企业里</text>
+  <text x="780" y="250" font-size="12" fill="#7a3328">被管起来</text>
+
+  <line x1="740" y1="352" x2="770" y2="352" stroke="#6b5fd3" stroke-width="1.4"/>
+  <text x="780" y="346" font-size="13" font-weight="600" fill="#2f2680">Agent Runtime</text>
+  <text x="780" y="366" font-size="12" fill="#3f348f">让一个 Agent 跑起来</text>
+  <text x="780" y="384" font-size="12" fill="#3f348f">+ 多 Profile 并存</text>
+
+  <text x="60" y="466" font-size="12" fill="#888">治理基线：kuul 把最轻的一组治理能力放进核心阶段，兑现“治理优先、默认最小授权、一切可审计”。</text>
+</svg>

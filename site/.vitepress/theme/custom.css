@@ -1,0 +1,244 @@
+/* ─────────────────────────────────────────────────────────────
+   kuul design tokens
+   Calm, airy, light-first: warm off-white page, deep navy headings,
+   light-weight display type, glass surfaces and pill buttons.
+───────────────────────────────────────────────────────────── */
+:root {
+  --kuul-font-display: 'Montserrat', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --kuul-font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+
+  --kuul-brand: #3d63dd;
+  --kuul-brand-deep: #2f4fb8;
+  --kuul-gradient: linear-gradient(135deg, #4338ca 0%, #2563eb 55%, #0891b2 100%);
+
+  --kuul-page: #f9f8f8;
+  --kuul-ink: #1e232c;
+  --kuul-ink-bluish: #152443;
+  --kuul-ink-2: rgba(0, 0, 0, 0.66);
+  --kuul-ink-3: rgba(0, 0, 0, 0.45);
+  --kuul-divider: rgba(0, 0, 0, 0.08);
+
+  --kuul-hero-sky: #a9c8ec;
+  --kuul-glass: rgba(255, 255, 255, 0.4);
+  --kuul-glass-strong: rgba(255, 255, 255, 0.55);
+  --kuul-glass-border: rgba(9, 45, 78, 0.16);
+  --kuul-glass-edge: rgba(255, 255, 255, 0.7);
+  --kuul-code-bg: rgba(0, 0, 0, 0.04);
+  --kuul-flow-rgb: 61, 99, 221;
+
+  /* VitePress */
+  --vp-font-family-base: var(--kuul-font-sans);
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --vp-c-brand-1: var(--kuul-brand);
+  --vp-c-brand-2: var(--kuul-brand-deep);
+  --vp-c-brand-3: var(--kuul-brand);
+  --vp-c-brand-soft: rgba(61, 99, 221, 0.1);
+
+  --vp-c-bg: var(--kuul-page);
+  --vp-c-bg-alt: #f3f2f1;
+  --vp-c-bg-soft: #f1f0ef;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-text-1: var(--kuul-ink);
+  --vp-c-text-2: var(--kuul-ink-2);
+  --vp-c-text-3: var(--kuul-ink-3);
+  --vp-c-divider: var(--kuul-divider);
+  --vp-c-gutter: var(--kuul-divider);
+
+  --vp-nav-bg-color: rgba(249, 248, 248, 0.72);
+  --vp-code-block-bg: var(--kuul-code-bg);
+}
+
+.dark {
+  --kuul-brand: #7f9cff;
+  --kuul-brand-deep: #a3b8ff;
+
+  --kuul-page: #14161b;
+  --kuul-ink: #e8eaef;
+  --kuul-ink-bluish: #dbe4ff;
+  --kuul-ink-2: rgba(255, 255, 255, 0.68);
+  --kuul-ink-3: rgba(255, 255, 255, 0.42);
+  --kuul-divider: rgba(255, 255, 255, 0.09);
+
+  --kuul-hero-sky: #1d3160;
+  --kuul-glass: rgba(255, 255, 255, 0.05);
+  --kuul-glass-strong: rgba(255, 255, 255, 0.08);
+  --kuul-glass-border: rgba(255, 255, 255, 0.14);
+  --kuul-glass-edge: rgba(255, 255, 255, 0.1);
+  --kuul-code-bg: rgba(255, 255, 255, 0.05);
+  --kuul-flow-rgb: 127, 156, 255;
+
+  --vp-c-brand-soft: rgba(127, 156, 255, 0.14);
+  --vp-c-bg-alt: #111318;
+  --vp-c-bg-soft: #1b1e25;
+  --vp-c-bg-elv: #1b1e25;
+  --vp-nav-bg-color: rgba(20, 22, 27, 0.72);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--kuul-brand);
+  color: #fff;
+}
+
+/* ─── Nav: translucent glass bar ─── */
+/* VitePress already keeps the bar transparent at the top of the home page and fills it
+   with --vp-nav-bg-color once scrolled; we only add the frosted blur. */
+.VPNavBar:not(.home.top) .content-body,
+.VPNavBar:not(.has-sidebar):not(.home.top),
+.VPNavBar.has-sidebar .title {
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+}
+
+.VPNavBar .divider-line {
+  background-color: var(--kuul-divider) !important;
+}
+
+.VPNavBarTitle .logo {
+  height: 26px;
+  width: auto;
+}
+
+.VPNavBarTitle .title {
+  font-family: var(--kuul-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Docs typography ─── */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  font-family: var(--kuul-font-display);
+  color: var(--kuul-ink-bluish);
+  letter-spacing: -0.01em;
+}
+
+.vp-doc h1 {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.25;
+}
+
+.vp-doc h2 {
+  font-weight: 500;
+  border-top: 0;
+  margin-top: 56px;
+  padding-top: 0;
+}
+
+.vp-doc h3 {
+  font-weight: 500;
+}
+
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.85;
+}
+
+/* Diagrams: no frame, just breathing room. */
+.vp-doc img[src*='/images/'] {
+  display: block;
+  margin: 40px auto;
+  border-radius: 12px;
+}
+
+/* Open tables: hairlines only. */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+}
+
+.vp-doc tr,
+.vp-doc tr:nth-child(2n) {
+  background: transparent;
+  border: 0;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 0;
+  border-bottom: 1px solid var(--kuul-divider);
+  padding: 12px 20px 12px 0;
+  background: transparent;
+}
+
+.vp-doc th {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+}
+
+/* Code: soft tint instead of a dark slab. */
+.vp-doc div[class*='language-'] {
+  border-radius: 16px;
+}
+
+/* Custom containers: glassy and soft. */
+.vp-doc .custom-block {
+  border-radius: 16px;
+  border: 1px solid var(--kuul-glass-border);
+}
+
+/* Sidebar & outline: same background as the page, no vertical rules on either side. */
+.VPSidebar,
+.VPNavBar.has-sidebar .title,
+.VPLocalNav {
+  background: var(--kuul-page) !important;
+  border: 0 !important;
+}
+
+.VPDocAsideOutline .content {
+  border-left: 0 !important;
+}
+
+.VPDocAsideOutline .outline-marker {
+  display: none;
+}
+
+.VPSidebarItem.level-0 > .item > .text,
+.VPSidebarItem.level-0 > .item > h2 {
+  font-family: var(--kuul-font-display);
+  font-weight: 500;
+}
+
+/* ─── Home: full-bleed custom page ─── */
+.VPHome {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.VPHome .VPHomeContent,
+.VPHome > .vp-doc {
+  padding: 0 !important;
+}
+
+/* VitePress caps the home content at 1280px; let our backgrounds run edge to edge. */
+.VPHome .vp-doc.container,
+.VPHome .container {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.VPHome .vp-doc > div {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+.Layout:has(.VPHome) .VPContent {
+  padding-top: 0 !important;
+}
+
+/* The home page has its own footer. */
+.Layout:has(.VPHome) .VPFooter {
+  display: none;
+}

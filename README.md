@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/kuul-logo.svg" alt="kuul logo" width="128" height="128">
+
 # kuul
 
 **Java 原生、私有部署、可审计的企业级 Agent OS**
@@ -13,7 +15,7 @@
 [![MCP](https://img.shields.io/badge/MCP-2026--07--28-purple.svg)](https://modelcontextprotocol.io/)
 [![Status](https://img.shields.io/badge/status-design%20phase-lightgrey.svg)](#项目状态)
 
-[简介](#简介) · [特性](#特性) · [快速开始](#快速开始) · [架构](#架构) · [路线图](#路线图) · [文档](#文档) · [参与贡献](#参与贡献)
+[官网](https://likun758.github.io/kuul/) · [简介](#简介) · [特性](#特性) · [快速开始](#快速开始) · [架构](#架构) · [路线图](#路线图) · [文档](#文档) · [参与贡献](#参与贡献)
 
 </div>
 
@@ -176,18 +178,21 @@ settings:
 
 - [x] 产品调研、需求分析、技术方案
 - [x] Maven 多模块工程骨架
+- [x] 项目官网（`site/`）
 - [ ] US-1 对接 LLM
 - [ ] US-2 ReAct 循环 + 治理骨架
 - [ ] US-3 Memory
 - [ ] US-4 Tool 体系 + 完整沙箱
 - [ ] US-5 Web Service + 收口
-- [ ] 1.0 发布与项目主页
+- [ ] 1.0 发布
 
 ### 不做什么
 
 可视化 workflow 编排（Dify 等平台可以作为客户端调用 kuul）、Agent 编程框架、模型本身、SaaS 优先形态、不受审批约束的自我进化。
 
 ## 文档
+
+项目官网：<https://likun758.github.io/kuul/>（源码在 [`site/`](site/)，VitePress 构建）。
 
 | 文档 | 内容 |
 |---|---|

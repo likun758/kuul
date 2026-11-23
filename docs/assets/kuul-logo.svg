@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">kuul</title>
+  <desc id="desc">A hexagonal base (the OS and its governance boundary) holding a "k" whose stem is the kernel and whose branches reach out to agents.</desc>
+  <defs>
+    <path id="kuul-hex" d="M118.0,23.8 A20,20 0 0 1 138.0,23.8 L213.3,67.2 A20,20 0 0 1 223.3,84.5 L223.3,171.5 A20,20 0 0 1 213.3,188.8 L138.0,232.2 A20,20 0 0 1 118.0,232.2 L42.7,188.8 A20,20 0 0 1 32.7,171.5 L32.7,84.5 A20,20 0 0 1 42.7,67.2 Z"/>
+    <linearGradient id="kuul-bg" x1="40" y1="20" x2="216" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4338CA"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#0891B2"/>
+    </linearGradient>
+    <linearGradient id="kuul-sheen" x1="128" y1="20" x2="128" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.20"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base: rounded hexagon = the OS boundary every agent runs inside -->
+  <use href="#kuul-hex" fill="url(#kuul-bg)"/>
+  <use href="#kuul-hex" fill="url(#kuul-sheen)"/>
+
+  <!-- Inner guard ring: governance -->
+  <polygon points="128,52 194,90 194,166 128,204 62,166 62,90"
+           fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- The "k": stem = kernel, branches = agents -->
+  <g stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" fill="none">
+    <line x1="102" y1="76" x2="102" y2="180"/>
+    <line x1="102" y1="130" x2="156" y2="94"/>
+    <line x1="102" y1="130" x2="156" y2="166"/>
+  </g>
+
+  <!-- Agents -->
+  <circle cx="160" cy="91" r="15" fill="#FFFFFF"/>
+  <circle cx="160" cy="91" r="6" fill="#2563EB"/>
+  <circle cx="160" cy="169" r="15" fill="#FFFFFF"/>
+  <circle cx="160" cy="169" r="6" fill="#0891B2"/>
+
+  <!-- Kernel -->
+  <circle cx="102" cy="130" r="17" fill="#FFFFFF"/>
+  <circle cx="102" cy="130" r="8" fill="#3730A3"/>
+</svg>

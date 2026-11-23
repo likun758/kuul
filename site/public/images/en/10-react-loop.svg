@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="600" fill="#2b2b2b">ReAct loop and tool execution pipeline</text>
+
+  <!-- loop column -->
+  <g font-size="13">
+    <rect x="60" y="64" width="300" height="46" rx="10" fill="#ecebff" stroke="#9b92e0"/>
+    <text x="210" y="92" text-anchor="middle" font-weight="600" fill="#3f348f">① Append user message to Session</text>
+
+    <rect x="60" y="134" width="300" height="62" rx="10" fill="#ddd9ff" stroke="#6b5fd3"/>
+    <text x="210" y="160" text-anchor="middle" font-weight="600" fill="#2f2680">② PromptBuilder assembles</text>
+    <text x="210" y="182" text-anchor="middle" font-size="11.5" fill="#3f348f">system · long-term memory · last N turns · tools</text>
+
+    <rect x="60" y="220" width="300" height="62" rx="10" fill="#ddd9ff" stroke="#6b5fd3"/>
+    <text x="210" y="246" text-anchor="middle" font-weight="600" fill="#2f2680">③ ProviderService calls the LLM</text>
+    <text x="210" y="268" text-anchor="middle" font-size="11.5" fill="#3f348f">framework auto-execution off · writes llm_calls</text>
+
+    <polygon points="210,306 330,346 210,386 90,346" fill="#ffffff" stroke="#6b5fd3" stroke-width="1.5"/>
+    <text x="210" y="351" text-anchor="middle" font-weight="600" fill="#2f2680">tool_calls?</text>
+
+    <rect x="60" y="420" width="300" height="46" rx="10" fill="#e9f6ee" stroke="#6fb38a"/>
+    <text x="210" y="448" text-anchor="middle" font-weight="600" fill="#2e6b45">⑤ Return the final response</text>
+  </g>
+  <line x1="210" y1="112" x2="210" y2="132" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="210" y1="198" x2="210" y2="218" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="210" y1="284" x2="210" y2="304" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="210" y1="388" x2="210" y2="418" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="222" y="408" font-size="12" fill="#2e6b45">no</text>
+
+  <!-- to pipeline -->
+  <line x1="332" y1="346" x2="418" y2="346" stroke="#7a7a7a" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="372" y="338" text-anchor="middle" font-size="12" fill="#3f348f">yes</text>
+
+  <!-- pipeline -->
+  <rect x="420" y="64" width="520" height="402" rx="14" fill="#faf9ff" stroke="#6b5fd3" stroke-width="1.6"/>
+  <text x="440" y="90" font-size="14" font-weight="700" fill="#2f2680">④ ToolExecutor pipeline (one call at a time)</text>
+  <g font-size="12">
+    <rect x="440" y="104" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="129" fill="#3f348f"><tspan font-weight="600">a. Resolve</tspan>  ToolRegistry looks up KuulTool by name; missing → not_found</text>
+    <rect x="440" y="154" width="480" height="40" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="456" y="179" fill="#8a5a00"><tspan font-weight="600">b. Authorize</tspan>  PolicyGuard: not granted by Profile → denied (deny by default)</text>
+    <rect x="440" y="204" width="480" height="40" rx="8" fill="#fffaf0" stroke="#d9a441"/>
+    <text x="456" y="229" fill="#8a5a00"><tspan font-weight="600">c. Validate</tspan>  JSON Schema arguments + SandboxChecker allowlist</text>
+    <rect x="440" y="254" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="279" fill="#3f348f"><tspan font-weight="600">d. Execute</tspan>  timeout and output cap; retryable errors back off, ≤ 3 tries</text>
+    <rect x="440" y="304" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="329" fill="#3f348f"><tspan font-weight="600">e. Record</tspan>  tool_invocations + audit event (arguments redacted)</text>
+    <rect x="440" y="354" width="480" height="40" rx="8" fill="#ffffff" stroke="#9b92e0"/>
+    <text x="456" y="379" fill="#3f348f"><tspan font-weight="600">f. Feed back</tspan>  ToolResult (ok / error / retryable) added as a tool message</text>
+  </g>
+  <text x="440" y="424" font-size="12" fill="#777">No step throws out of the loop: failures become a ToolResult for the LLM to handle</text>
+  <text x="440" y="446" font-size="12" fill="#777">Iteration count +1; stops at max_iterations (default 10)</text>
+
+  <!-- back arrow -->
+  <path d="M 680 468 L 680 500 L 30 500 L 30 165 L 58 165" fill="none" stroke="#7a7a7a" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="44" y="490" font-size="12" fill="#777">back to ②</text>
+</svg>
