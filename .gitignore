@@ -1,0 +1,18 @@
+# Build
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+
+# kuul runtime workspace (contains data, logs and secrets)
+.kuul/
+*.db
